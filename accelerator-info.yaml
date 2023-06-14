@@ -1,0 +1,24 @@
+id: 1c1728ad-03bc-4828-877a-f5aa6f358eb3
+timestamp: 2023-06-14T01:29:05Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: tanzu-java-web-app
+  source:
+    image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:0310128e62ade8150fbfa9fd82e826d98d4311a17b97ba5cb2bdab1ffc25d7d9
+fragments:
+  - name: java-version
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:fa976ccf1609cb69e74a0162f0f49581fd0d393003e2fbe5d54d12eae62b4ff9
+  - name: tap-workload
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+  - name: build-wrapper-maven
+    source:
+      image: registry.tanzu.vmware.com/tanzu-application-platform/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+options:
+  includeBuildToolWrapper: true
+  javaVersion: 11
+  projectName: tanzu-java-web-app
+  repositoryPrefix: tapazure.azurecr.io/testapps
+  updateBoot3: false
